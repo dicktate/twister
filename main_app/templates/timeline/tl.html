@@ -1,0 +1,20 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>Twister</title>
+</head>
+<body>
+{% if tl %}
+    <div>
+        <ul>
+        {% for post in tl %}
+            <li>{{post.text}}</li>
+        {% endfor %}
+        </ul>
+    </div>
+{% else %}
+    <p>No hay posts ...</p>
+{% endif %}
+</body>
+</html>
