@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('timeline/', views.timeline, name = 'timeline'),
-    path('', views.index, name='index'),
+    path('detail/<int:post_id>/', views.detail, name = 'detail'),
+    path('', views.index, name = 'index'),
 ]
