@@ -1,5 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <!-- Vista detalle de cada post -->
 <div>
-    <h2>El usuario <i>{{contenido.user.name }}</i> el {{ contenido.time }} escribió:</h2>
+    <h3>El usuario 
+    <a href="/userhome/{{ contenido.user.name }}/" >
+        {{ contenido.user.name }}
+    </a>
+    el {{ contenido.time }} escribió:</h3>
     {{ contenido.text }}
 </div>
+{% endblock %}

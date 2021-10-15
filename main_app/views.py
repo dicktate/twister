@@ -5,7 +5,8 @@ from .models import Post
 
 # Create your views here.
 def index(request):
-    return HttpResponse("It works")
+    # return HttpResponse("It works")
+    return render(request, 'base.html')
 
 def home(request):
     response = "Todos los Posts" 
@@ -23,3 +24,10 @@ def detail(request, post_id):
     print (context['contenido'])
     # return HttpResponse('Post id = %i.' % post_id)
     return render(request, 'post/detail.html', context)
+
+def userpage(request, user_id):
+    # Render all posts by user
+    contenido = Posts.objects.filter(user=user_id)
+    print(user)
+    context = { 'contenido' : contenido }
+    return render(request, 'user/home.html', context)
