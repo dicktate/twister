@@ -46,7 +46,10 @@ def register(request):
     elif request.method == "POST":
         form = CustomUserCreationForm(request.POST)
         print("####")
-        print(form.errors ) ####
+        if (form.errors):
+            context = form.errors
+            print(form.errors ) ####
+            return render(request, "registration/register.html", {'form' : form})
         if form.is_valid():
             user = form.save()
             login(request, user)
