@@ -18,6 +18,7 @@ def home(request):
     tl = Post.objects.all().order_by('-time')
     #template = loader.get_template('home/tl.html')
     context = { 'tl': tl }
+    # print (request.user_name)
     # return HttpResponse(template.render(context, request))
     return render(request, 'home/tl.html', context)
 
